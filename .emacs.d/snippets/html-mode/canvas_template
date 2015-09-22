@@ -1,0 +1,15 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: canvas template
+# key: canvas.template
+# --
+<html>
+  <head>
+    <title>$1</title>
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <h1>$2</h1>
+    <canvas width="$3" height="$4"></canvas>
+  </body>
+</html>
