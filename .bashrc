@@ -11,7 +11,7 @@ PS1='[\u@\h \W]\$ '         # used for customize the terminal prompt
 
 # My tar executables are stored at ~/App but symbolic links running the applications
 # are located in ~/bin. ~/.cabal/bin is needed for Haskell packages.
-export PATH="$PATH:~/bin"
+export PATH="$PATH:~/Bin"
 export PATH="$PATH:~/.cabal/bin"
 # From: http://superuser.com/questions/365847/where-should-the-xdg-config-home-variable-be-defined 
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -37,6 +37,7 @@ export CC="/usr/bin/gcc"
 export CXX="/usr/bin/g++"
 
 # Colored man pages
+# https://wiki.archlinux.org/index.php/Man_page#Colored_man_pages
 man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \
     LESS_TERMCAP_md=$'\E[01;38;5;74m' \

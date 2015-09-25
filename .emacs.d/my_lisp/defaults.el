@@ -8,7 +8,7 @@
 ; Uses the Allman style for writing C:
 ; https://en.wikipedia.org/wiki/Indent_style#Allman_style
 (setq c-default-style "bsd"
-      c-basic-offset  4)
+      c-basic-offset  2)
 
 ; Indents case statements instead of inling them in
 ; c and c++.

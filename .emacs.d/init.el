@@ -3,6 +3,9 @@
 ; Alex Goico
 ; 03/20/15
 
+;;; Remove emacs start screen
+(setq inhibit-startup-message t)
+
 ;;; Package Repositories
 (require 'package)
 (add-to-list 'package-archives 

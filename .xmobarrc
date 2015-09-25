@@ -1,0 +1,45 @@
+Config {
+    bgColor = "black"
+  , fgColor = "grey"
+  , position = TopW L 95
+  , commands =
+    [ Run MultiCpu   [ "--template", "Cpu: <autototal>%"
+                     , "--Low",    "50"
+                     , "--High",   "85"
+                     , "--normal", "green"
+                     , "--high",   "red"
+                     ] 10
+
+    , Run DynNetwork [ "--Low",    "1000"
+                     , "--High",   "5000"
+                     , "--low",    "green"
+                     , "--normal", "yellow"
+                     , "--high",   "red"
+                     ] 10
+
+    , Run CoreTemp   [ "--Low",    "50"
+                     , "--High",   "65"
+                     , "--low",    "green"
+                     , "--normal", "yellow"
+                     , "--high",   "red"
+                     ] 10
+
+    , Run Battery    [ "--template", "Batt: <acstatus>"
+                     , "--Low",    "10"
+                     , "--High",   "80"
+                     , "--low",    "red"
+                     , "--normal", "yellow"
+                     , "--high",   "green"
+                     , "--"
+                           , "-o", "<left>% (<timeleft>)"
+                           , "-O", "<fc=#dAA520>Charging</fc>"
+                           , "-i", "<fc=#006000>Charged</fc>"
+                     ] 50
+
+    , Run Date "<fc=#ABABAB>%F (%a) %I:%M:%S</fc>" "date" 10
+    , Run StdinReader
+    ]
+  , sepChar  = "%"
+  , alignSep = "}{"
+  , template = "%battery% %coretemp% } %StdinReader% { %multicpu% %dynnetwork% %date%"
+  }
