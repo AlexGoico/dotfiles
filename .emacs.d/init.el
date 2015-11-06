@@ -12,8 +12,6 @@
 	     '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives 
 	     '("melpa" . "http://melpa.milkbox.net/packages/"))
-(add-to-list 'package-archives
-             '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/"))
 (package-initialize)
 (setq tags-table-list
       '("/usr/share/emacs/24.3/lisp/TAGS"))
@@ -40,8 +38,12 @@
 (load "autocomp_prefs.el")
 (load "paredit_prefs.el")
 ;; Languages
+(load "latex_prefs.el")
 (load "c_cpp_prefs.el")
 (load "common-lisp_prefs.el")
 (load "clojure_prefs.el")
 (load "haskell_mode_prefs.el")
 (load "js_prefs.el")
+(require 'flycheck-pyflakes)
+
+(add-hook 'term-mode-hook (lambda () (yas-minor-mode -1)))
