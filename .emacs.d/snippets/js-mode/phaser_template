@@ -1,0 +1,25 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: phaser template
+# key: phaser.template
+# --
+var game = new Phaser.Game($1, $2);
+
+var $3 = function() {
+
+};
+
+$3.prototype = {
+  preload : function() {
+
+  },
+
+  create : function() {
+
+  },
+
+  update : function() {
+
+  }
+};
+
+game.state.add('Game', $3, true);  

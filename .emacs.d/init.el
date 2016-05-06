@@ -10,8 +10,10 @@
 (require 'package)
 (add-to-list 'package-archives 
 	     '("marmalade" . "http://marmalade-repo.org/packages/"))
+;(add-to-list 'package-archives 
+;	     '("melpa" . "http://melpa.milkbox.net/packages/"))
 (add-to-list 'package-archives 
-	     '("melpa" . "http://melpa.milkbox.net/packages/"))
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 (setq tags-table-list
       '("/usr/share/emacs/24.3/lisp/TAGS"))
@@ -29,21 +31,23 @@
 ;;; Packages
 ;; Package Path
 (setq load-path (cons "~/.emacs.d/my_lisp" load-path))
+
 ;; Tools
 (load "defaults.el")
 (load "my_functions.el")
+(load "linum_prefs.el")
 (load "evil_prefs.el")
 (load "flycheck_prefs.el")
 (load "yas_prefs.el")
 (load "autocomp_prefs.el")
-(load "paredit_prefs.el")
+;(load "paredit_prefs.el")        removed for lack of use, perhaps another time
+
 ;; Languages
 (load "latex_prefs.el")
 (load "c_cpp_prefs.el")
-(load "common-lisp_prefs.el")
+(autoload 'load "common-lisp_prefs.el")
 (load "clojure_prefs.el")
 (load "haskell_mode_prefs.el")
 (load "js_prefs.el")
-(require 'flycheck-pyflakes)
-
-(add-hook 'term-mode-hook (lambda () (yas-minor-mode -1)))
+;(load "magit-prefs.el")
+(put 'narrow-to-region 'disabled nil)

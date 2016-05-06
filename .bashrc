@@ -9,12 +9,19 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '         # used for customize the terminal prompt
 
-# My tar executables are stored at ~/App but symbolic links running the applications
-# are located in ~/bin. ~/.cabal/bin is needed for Haskell packages.
+# My tar executables are stored at ~/App but symbolic links running the 
+# applications are located in ~/bin. ~/Scripts are my custom bash scripts
+# direcotry.
+# ~/.cabal/bin is needed for Haskell packages.
 export PATH="$PATH:~/Bin"
+export PATH="$PATH:~/Scripts"
 export PATH="$PATH:~/.cabal/bin"
-# From: http://superuser.com/questions/365847/where-should-the-xdg-config-home-variable-be-defined 
-export XDG_CONFIG_HOME="$HOME/.config"
+export PATH="$PATH:~/Builds/cilktools-linux/bin"
+
+export ANDROID_HOME=/opt/android-sdk
+export CURLCPP_HOME=/home/typedeph/libs/cpp/curlcpp/
+export CMAKE_LIBRARY_PATH=$CMAKE_LIBRARY_PATH:$CURLCPP_HOME/libs
+export CMAKE_INCLUDE_PATH=$CMAKE_LIBRARY_PATH:$CURLCPP_HOME/include
 
 # Common pacman aliases for lazy package control
 alias pacupg='yaourt -Syua'

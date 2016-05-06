@@ -5,4 +5,4 @@
 ; Enables paredit for emacs lisp, common lisp, and clojure
 (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
 (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
-(add-hook 'clojure-mode-hook             #'enable-paredit-mode)
+(add-hook 'clojure-mode-hook          #'enable-paredit-mode)

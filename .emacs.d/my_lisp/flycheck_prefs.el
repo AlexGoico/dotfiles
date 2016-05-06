@@ -9,3 +9,10 @@
           (lambda ()
             (setq flycheck-checker 'c/c++-gcc)
             (setq flycheck-gcc-language-standard "gnu++11")))
+
+; Brings python linting to flycheck
+(require 'flycheck-pyflakes)
+
+; Haskell linting (?)
+(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
