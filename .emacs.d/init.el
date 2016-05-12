@@ -40,7 +40,7 @@
 (load "flycheck_prefs.el")
 (load "yas_prefs.el")
 (load "autocomp_prefs.el")
-;(load "paredit_prefs.el")
+(load "paredit_prefs.el")
 (load "helm_prefs.el")
 
 ;; Languages
