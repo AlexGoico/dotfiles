@@ -36,7 +36,7 @@
 (load "yas_prefs.el")
 (load "autocomp_prefs.el")
 (load "paredit_prefs.el")
-;(load "helm_prefs.el")
+(load "helm_prefs.el")
 
 ;; Languages
 (load "latex_prefs.el")
@@ -47,3 +47,5 @@
 (load "js_prefs.el")
 ;(load "magit-prefs.el")
 (put 'narrow-to-region 'disabled nil)
+
+(setq paradox-github-token "898a9f3a119d52fc7d3dbde82b0123e4696e96e9")
