@@ -4,6 +4,7 @@
 ; Defaults flycheck to c11
 (add-hook 'c-mode-hook 
 	  (lambda () (setq flycheck-gcc-language-standard "gnu11")))
+
 ; Defaults flycheck to c++11 and uses gcc instead of clang
 (add-hook 'c++-mode-hook
           (lambda ()

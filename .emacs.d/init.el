@@ -21,7 +21,7 @@
 ;;; Font
 ; Bistream fonts must be downloaded with package manager.
 ; ttf-bistream-vera on Arch Linux
-(set-default-font "-bitstream-Bitstream Vera Sans Mono-normal-normal-normal-monospace-13-*-*-*-m-0-iso10646-1")
+;(set-default-font "-bitstream-Bitstream Vera Sans Mono-normal-normal-normal-monospace-13-*-*-*-m-0-iso10646-1")
 
 ;;; Packages
 ;; Package Preferences Path
@@ -34,8 +34,9 @@
 (load "evil_prefs.el")
 (load "flycheck_prefs.el")
 (load "yas_prefs.el")
-(load "autocomp_prefs.el")
+(load "company_prefs.el")
 (load "paredit_prefs.el")
+(load "ggtags_prefs.el")
 (load "helm_prefs.el")
 
 ;; Languages
@@ -45,7 +46,23 @@
 (load "clojure_prefs.el")
 (load "haskell_mode_prefs.el")
 (load "js_prefs.el")
-;(load "magit-prefs.el")
+(load "org_mode_prefs.el")
+(load "magit-prefs.el")
 (put 'narrow-to-region 'disabled nil)
+(global-set-key "\C-cd" 'zeal-at-point)
 
-(setq paradox-github-token "898a9f3a119d52fc7d3dbde82b0123e4696e96e9")
+;; Token used for paradox in list packages
+(setq paradox-github-token "f6698bd329deab57656b06c23a26aba30bc4ef8b")
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(paradox-automatically-star t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
