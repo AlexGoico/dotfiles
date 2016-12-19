@@ -49,7 +49,7 @@
 (load "org_mode_prefs.el")
 (load "magit-prefs.el")
 (put 'narrow-to-region 'disabled nil)
-(global-set-key "\C-cd" 'zeal-at-point)
+(global-set-key "\C-cz" 'zeal-at-point)
 
 ;; Token used for paradox in list packages
 (setq paradox-github-token "f6698bd329deab57656b06c23a26aba30bc4ef8b")
