@@ -3,20 +3,56 @@
 ;;; Remove emacs start screen
 (setq inhibit-startup-message t)
 
+(setq package-list
+      '('company
+;       'clojure-mode
+;       'clj-refactor
+        'evil
+        'flycheck
+        'flycheck-pyflakes
+        'ggtags
+        'haskell-mode
+        'helm
+        'helm-descbinds
+        'helm-ggtags
+        'hipster-theme
+        'js2-mode
+        'rainbow-delimiters-mode
+        'rainbow-identifiers-mode
+        'disaster
+        'magit
+        'org-bullets
+        'paradox
+        'paredit
+        'use-package
+        'yassnippet
+        'zeal-at-point))
+
 ;;; Package Repositories
 (require 'package)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives
+	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (add-to-list 'package-archives 
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
+
+; Ensure use-package is installed
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
 
 ;;; Emacs Source Code Tags
 (setq tags-table-list
       '("/usr/share/emacs/24.3/lisp/TAGS"))
 
 ;;; Theme
-; Hipster needs to be downloaded from melpa repo
-; download using M-x list-packages, search with C-s hipster
-(load-theme 'hipster t)
+;; Downloads hipster theme from melpa and enables it
+(use-package hipster-theme
+  :ensure t
+  :config
+  (load-theme 'hipster t))
 
 ;;; Font
 ; Bistream fonts must be downloaded with package manager.
@@ -42,14 +78,14 @@
 ;; Languages
 (load "latex_prefs.el")
 (load "c_cpp_prefs.el")
-(load "common-lisp_prefs.el")
-(load "clojure_prefs.el")
+;(load "clojure_prefs.el")
 (load "haskell_mode_prefs.el")
 (load "js_prefs.el")
 (load "org_mode_prefs.el")
 (load "magit-prefs.el")
+
+;; Allow narrowing
 (put 'narrow-to-region 'disabled nil)
-(global-set-key "\C-cz" 'zeal-at-point)
 
 ;; Token used for paradox in list packages
 (setq paradox-github-token "f6698bd329deab57656b06c23a26aba30bc4ef8b")

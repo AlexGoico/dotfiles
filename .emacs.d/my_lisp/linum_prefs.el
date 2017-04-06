@@ -10,7 +10,7 @@
   (let ((test2 (1+ (- line-number my-linum-current-line-number))))
     (propertize
      (format "%3d" (cond ((<= test2 0) (1- test2))
-                             ((> test2 0) test2)))
+                         ((> test2 0)  test2)))
      'face 'linum)))
 
 (defadvice linum-update (around my-linum-update)

@@ -1,5 +1,5 @@
-;; Include evil
-(require 'evil)
-
-;; Enable evil mode globally in all buffers
-(evil-mode 1)
+;; Include evil and enable evil mode in all buffers
+(use-package evil
+  :ensure t
+  :config
+  (evil-mode 1))
