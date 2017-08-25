@@ -94,6 +94,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (flycheck-rust racer cargo rust-mode zeal-at-point use-package rainbow-identifiers rainbow-delimiters pyvenv python-environment paradox org-bullets org nhexl-mode latex-preview-pane idomenu hipster-theme highlight-indentation helm-gtags helm-descbinds ggtags flycheck-pyflakes flycheck-haskell find-file-in-project evil-magit epc disaster company cmake-mode clj-refactor auctex ac-slime ac-math ac-js2 0blayout)))
  '(paradox-automatically-star t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
