@@ -6,5 +6,5 @@
 
   ;; Use 2 indents for normal js mode and js2 mode
   (setq js-indent-level 2)
-  (setq js-indent-switch-offset 2)
+  (setq js-switch-indent-offset 2)
   (setq js2-basic-offset 2))
