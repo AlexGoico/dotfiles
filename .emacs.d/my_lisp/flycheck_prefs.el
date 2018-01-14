@@ -12,12 +12,11 @@
 
   ;; Defaults flycheck to c11
   (add-hook 'c-mode-hook 
-            (lambda () (setq flycheck-gcc-language-standard "gnu11")))
+            (lambda () (setq flycheck-clang-language-standard "c11")))
   ;; Defaults flycheck to c++11 and uses gcc instead of clang
   (add-hook 'c++-mode-hook
             (lambda ()
-              (setq flycheck-checker 'c/c++-gcc)
-              (setq flycheck-gcc-language-standard "gnu++11")))
+              (setq flycheck-clang-language-standard "c++1y")))
 
   ;; Haskell linting (?)
   (add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
